@@ -76,8 +76,9 @@
         <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/ClientHandle.cs" />
         <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/LoadingScreen.cs" />
         <option value="$PROJECT_DIR$/Assets/AccountData.cs" />
+        <option value="$PROJECT_DIR$/Assets/CharacterData.cs" />
+        <option value="$PROJECT_DIR$/Assets/LoadingScreen.cs" />
       </list>
     </option>
   </component>
@@ -118,7 +119,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608026767760</updated>
-      <workItem from="1608026782279" duration="5385000" />
+      <workItem from="1608026782279" duration="5665000" />
     </task>
     <servers />
   </component>
