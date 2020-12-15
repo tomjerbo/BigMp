@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\tomje\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\tomje\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Mp.1674353742.00" t="ExcludeRecursive" />
+    <e p="C:\Users\tomje\Desktop\Mp" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="MultiplayerPackage" t="Include">
+          <e p="Client" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Client.cs" t="Include" />
+              <e p="ClientHandle.cs" t="Include" />
+              <e p="ClientSend.cs" t="Include" />
+              <e p="GameManager.cs" t="Include" />
+              <e p="Packet.cs" t="Include" />
+              <e p="ThreadManager.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Server" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Client.cs" t="Include" />
+              <e p="Constants.cs" t="Include" />
+              <e p="NetworkManager.cs" t="Include" />
+              <e p="Packet.cs" t="Include" />
+              <e p="Player.cs" t="Include" />
+              <e p="Server.cs" t="Include" />
+              <e p="ServerHandle.cs" t="Include" />
+              <e p="ServerSend.cs" t="Include" />
+              <e p="ThreadManager.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Shared" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="SharedData.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="ButtonEvent.cs" t="Include" />
+          <e p="CharacterListing.cs" t="Include" />
+          <e p="CharacterMenu.cs" t="Include" />
+          <e p="GameEvent.cs" t="Include" />
+        </e>
+        <e p="Shader" t="Include">
+          <e p="Skybox_Gradient.shader" t="Include" />
+        </e>
+      </e>
+      <e p="Mp.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
