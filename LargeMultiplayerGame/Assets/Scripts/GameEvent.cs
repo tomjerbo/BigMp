@@ -6,30 +6,41 @@ using UnityEngine;
 
 public class GameEvent : MonoBehaviour
 {
-    private static Action OnCharacterSelect;
-    private static Action OnConnectoToServer;
-    private static Action OnJoinGameWorld;
+    #region Singleton
 
-
-    public static void RunEvent(GameEvents _event)
+    public static GameEvent instance;
+    private void Awake()
     {
-        switch (_event)
-        {
-            case GameEvents.SelectCharacter: OnCharacterSelect?.Invoke(); break;
-            case GameEvents.ConnectToServer: OnConnectoToServer?.Invoke(); break;
-            case GameEvents.JoinGameWorld: OnJoinGameWorld?.Invoke(); break;
-            
-            
-            default: throw new ArgumentOutOfRangeException(nameof(_event), _event, null);
-        }
+        if (instance != null) Destroy(this);
+        else instance = this;
+        DontDestroyOnLoad(this);
     }
 
+    #endregion
 
+
+
+    public Action OnSelectCharacter;
+    public Action OnConnectoToServer;
+    public Action OnJoinGameWorld;
+    public Action<string[]> OnStartLoadingScreen;
+    public Action OnStopLoadingScreen;
+    public Action OnLoadingItemCompleted;
+    public Action OnLoadingAccountDataFinished;
+
+    public void SelectCharacter() => OnSelectCharacter?.Invoke();
+    public void ConnectoToServer() => OnConnectoToServer?.Invoke();
+    public void JoinGameWorld() => OnJoinGameWorld?.Invoke();
+    public void StartLoadingScreen(string[] _nameOfData) => OnStartLoadingScreen?.Invoke(_nameOfData);
+    public void StopLoadingScreen() => OnStopLoadingScreen?.Invoke();
+    public void LoadingItemCompleted() => OnLoadingItemCompleted?.Invoke();
+    public void LoadingAccountDataFinished() => OnLoadingAccountDataFinished?.Invoke();
+
+    
+    
+    
+    
+    
+    
 }
 
-public enum GameEvents
-{
-    SelectCharacter,
-    ConnectToServer,
-    JoinGameWorld,
-}

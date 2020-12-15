@@ -14,8 +14,8 @@ namespace ClientCode
             Debug.Log($"Message from server: {_msg}");
             Client.instance.myId = _myId;
             Client.instance.udp.Connect(((IPEndPoint)Client.instance.tcp.socket.Client.LocalEndPoint).Port);
-            ClientSend.WelcomeReceived();
-            Debug.Log("Sent welcome received.");
+            
+            GameManager.instance.ConnectedToServerCallback(); // Maybe add a server message to this callback
         }
 
     }

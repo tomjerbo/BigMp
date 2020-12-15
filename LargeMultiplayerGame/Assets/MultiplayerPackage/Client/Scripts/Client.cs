@@ -10,7 +10,7 @@ namespace ClientCode
     public class Client : MonoBehaviour
     {
         public static Client instance;
-        public static int dataBufferSize = 4096;
+        public static int dataBufferSize = 1024;
 
         public string ip = "127.0.0.1";
         public int port = 26950;
@@ -41,9 +41,8 @@ namespace ClientCode
         }
 
         /// <summary>Attempts to connect to the server.</summary>
-        public void ConnectToServer(string _ipAdress)
+        public void ConnectToServer()
         {
-            ip = _ipAdress;
             tcp = new TCP();
             udp = new UDP();
 
@@ -51,6 +50,11 @@ namespace ClientCode
 
             isConnected = true;
             tcp.Connect(); // Connect tcp, udp gets connected once tcp is done
+        }
+
+        public void TimoutConnection()
+        {
+            Disconnect();
         }
 
         public class TCP
