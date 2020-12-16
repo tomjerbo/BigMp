@@ -4,7 +4,10 @@
     public enum ServerPackets
     {
         welcome = 1,
+        LoginSuccessful,
+        LoginFailed,
         PlayerDisconnected,
+        StopConnection,
     }
 
     /// <summary>Sent from client -> server.</summary>

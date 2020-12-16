@@ -29,9 +29,6 @@ namespace ServerCode
 
         private void Start()
         {
-            QualitySettings.vSyncCount = 0;
-            Application.targetFrameRate = Constants.TICKS_PER_SEC;
-
             Server.Start(maxPlayers, serverPort);
         }
 

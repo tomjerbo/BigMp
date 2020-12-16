@@ -28,11 +28,13 @@ namespace ClientCode
         #region Packets
         
         /// <summary>Lets the server know that the welcome message was received.</summary>
-        public static void WelcomeReceived()
+        public static void WelcomeReceived(string _username, string _password)
         {
             using (Packet _packet = new Packet((int)ClientPackets.welcomeReceived))
             {
                 _packet.Write(Client.instance.myId);
+                _packet.Write(_username);
+                _packet.Write(_password);
 
                 SendTCPData(_packet);
             }

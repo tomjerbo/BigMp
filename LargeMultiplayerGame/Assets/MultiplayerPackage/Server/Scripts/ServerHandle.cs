@@ -8,18 +8,18 @@ namespace ServerCode
     {
         public static void WelcomeReceived(int _fromClient, Packet _packet)
         {
-            Debug.Log("Received welcome back from client.");
-
             int _clientIdCheck = _packet.ReadInt();
             string _username = _packet.ReadString();
+            string _password = _packet.ReadString();
+            int _token = _packet.ReadInt();
 
-            Debug.Log($"{Server.clients[_fromClient].tcp.socket.Client.RemoteEndPoint} connected successfully and is now player {_fromClient}.");
-            if (_fromClient != _clientIdCheck)
-            {
-                Debug.Log($"Player \"{_username}\" (ID: {_fromClient}) has assumed the wrong client ID ({_clientIdCheck})!");
-                // Maybe worth disconnecting the player. Should only happen if tampered with client ID.
-            }
+            if (_fromClient != _clientIdCheck) ServerSend.StopConnection(_clientIdCheck);
+            
+            ServerAccountManager.AccountLogin(_fromClient, new []{_username,_password}, _token);
+
         }
 
+        
+        
     }
 }

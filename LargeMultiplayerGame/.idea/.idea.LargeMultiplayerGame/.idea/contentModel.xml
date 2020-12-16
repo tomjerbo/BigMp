@@ -43,6 +43,11 @@
           <e p="CharacterListing.cs" t="Include" />
           <e p="CharacterMenu.cs" t="Include" />
           <e p="GameEvent.cs" t="Include" />
+          <e p="Items" t="Include">
+            <e p="Equipment.cs" t="Include" />
+            <e p="Weapon.cs" t="Include" />
+          </e>
+          <e p="ServerAccountManager.cs" t="Include" />
         </e>
         <e p="Shader" t="Include">
           <e p="Skybox_Gradient.shader" t="Include" />

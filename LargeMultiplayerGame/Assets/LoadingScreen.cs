@@ -28,7 +28,7 @@ public class LoadingScreen : MonoBehaviour
     {
         completedItems++;
         loadingProgress.text = completedItems < nameOfData.Count 
-            ? $"Loading: [{nameOfData[completedItems]}].. {completedItems} / {nameOfData.Count}" 
+            ? $"Loading: [{nameOfData[completedItems]}].. {completedItems} / {nameOfData.Count}"     
             : $"{completedItems} / {nameOfData.Count} Loaded. Finishing up..";
     }
 

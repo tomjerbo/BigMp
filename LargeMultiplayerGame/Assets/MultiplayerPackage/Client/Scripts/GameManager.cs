@@ -14,6 +14,8 @@ namespace ClientCode
         public static GameManager instance;
         private void Awake() { if (instance == null) { instance = this; } else if (instance != this) { Destroy(this); } }
 
+        public InputField username;
+        public InputField password;
 
         private void Start()
         {

@@ -97,6 +97,26 @@ namespace ServerCode
                 SendTCPData(_toClient, _packet);
             }
         }
+        
+        public static void LoginSuccessful(int _toClient, ServerAccount _accountData)
+        {
+            using (Packet _packet = new Packet((int) ServerPackets.LoginSuccessful))
+            {
+                _packet.Write(_accountData.CreateSessionToken());
+                
+                
+                SendTCPData(_toClient, _packet);
+            }
+        }
+
+        public static void LoginFailed(int _toClient, string _message)
+        {
+            using (Packet _packet = new Packet((int) ServerPackets.LoginFailed))
+            {
+                _packet.Write(_message);
+                SendTCPData(_toClient, _packet);
+            }
+        }
 
 
         public static void PlayerDisconnected(int _playerId)
@@ -106,6 +126,14 @@ namespace ServerCode
                 _packet.Write(_playerId);
 
                 SendTCPDataToAll(_packet);
+            }
+        }
+
+        public static void StopConnection(int _playerId)
+        {
+            using (Packet _packet = new Packet((int) ServerPackets.StopConnection))
+            {
+                SendTCPData(_playerId, _packet);
             }
         }
         
