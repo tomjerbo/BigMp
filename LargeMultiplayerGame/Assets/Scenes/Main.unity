@@ -765,6 +765,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace055ba9608a6949b3ea9e657d93761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  username: {fileID: 725530507}
+  password: {fileID: 1391684236}
 --- !u!4 &556680661
 Transform:
   m_ObjectHideFlags: 0
@@ -794,6 +796,7 @@ MonoBehaviour:
   ip: 192.168.0.108
   port: 26950
   myId: 0
+  sessionToken: -1
 --- !u!114 &556680663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2437,6 +2440,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NetworkManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684515829472715658, guid: b5fbf55374bf65c4c8cff80f8e06fcea,
+        type: 3}
+      propertyPath: debugName
+      value: tom
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684515829472715658, guid: b5fbf55374bf65c4c8cff80f8e06fcea,
+        type: 3}
+      propertyPath: debugPass
+      value: bobo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5fbf55374bf65c4c8cff80f8e06fcea, type: 3}

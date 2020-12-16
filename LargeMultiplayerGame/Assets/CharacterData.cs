@@ -1,23 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-public struct CharacterData
+public class CharacterData
 {
-    public CharacterData(string _characterName, int _characterLevel, int _characterExperience, Vector3 _characterPosition, WorldLocation _worldLocation, Equipment[] _equipments)
-    {
-        characterName = _characterName;
-        characterLevel = _characterLevel;
-        characterExperience = _characterExperience;
-        characterPosition = _characterPosition;
-        worldLocation = _worldLocation;
-        equipments = _equipments;
-    }
-
-    public string characterName;
-    public int characterLevel;
-    public int characterExperience;
-    public Vector3 characterPosition;
-    public WorldLocation worldLocation;
-    public Equipment[] equipments;
+    public string characterName = "Empty";
+    public int characterLevel = 1;
+    public int characterExperience = 0;
+    public Vector3 characterPosition = Vector3.zero;
+    public WorldLocation worldLocation = WorldLocation.Start;
+    public List<Equipment> equipments = new List<Equipment>();
 }
 
 public enum WorldLocation

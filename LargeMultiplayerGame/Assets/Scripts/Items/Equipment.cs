@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class Equipment : ScriptableObject
+public class Equipment
 {
     public Equipment(ItemSlot _itemSlot)
     {

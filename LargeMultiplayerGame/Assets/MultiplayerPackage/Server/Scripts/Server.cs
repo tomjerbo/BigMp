@@ -133,6 +133,7 @@ namespace ServerCode
             packetHandlers = new Dictionary<int, PacketHandler>()
             {
                 { (int)ClientPackets.welcomeReceived, ServerHandle.WelcomeReceived },
+                { (int)ClientPackets.RequestAccountDataFromServer, ServerHandle.RequestAccountDataFromServer },
             };
             Debug.Log("Initialized packets.");
         }

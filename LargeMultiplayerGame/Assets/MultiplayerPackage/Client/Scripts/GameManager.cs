@@ -34,8 +34,15 @@ namespace ClientCode
             Client.instance.ConnectToServer();
             // Check if connection has timed out
 
-            StopCoroutine(timeout);
-            StartCoroutine(timeout);
+            //StopCoroutine(timeout);
+            //StartCoroutine(timeout);
+        }
+        
+
+        [ContextMenu("Leave server")]
+        public void LeaveServer()
+        {
+            Client.instance.TimoutConnection();
         }
         
         private IEnumerator timeout = ConnectToServerTimout(3f);
@@ -48,35 +55,38 @@ namespace ClientCode
         public void ConnectedToServerCallback()
         {
             // Stop timeout coroutine since connection was successful
-            StopCoroutine(timeout);
+            //StopCoroutine(timeout);
             
             // Confirm connection, request data via (RequestAccountDataFromServer).
+            ClientSend.WelcomeReceived(username.text, password.text, Client.instance.sessionToken);
+            
             // Start loading data during loading screen
-            GameEvent.instance.StartLoadingScreen(new []{ "Account details", "Character data", "Character equipment", "Starting location" });
-            StartCoroutine(load());
+            GameEvent.instance.StartLoadingScreen(new []{ "Session Token.","Account data", });
         }
+        
 
-        private IEnumerator load()
+        public void LoginSuccessful(int _sessionToken)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                yield return new WaitForSecondsRealtime(2f);
-                GameEvent.instance.LoadingItemCompleted();
-            }
-        }
-
-        private void RequestAccountDataFromServer()
-        {
+            Client.instance.sessionToken = _sessionToken;
+            
             // Specify what data is the client want
+            ClientSend.RequestAccountDataFromServer(_sessionToken);
+
             // Display progress of loading it
+            GameEvent.instance.LoadingItemCompleted();
         }
 
         public void AccountDataReceived()
         {
             // This runs once all account data has been received
+            GameEvent.instance.StopLoadingScreen();
+            
             // Disable loading screen and open character menu
+            Debug.Log("Finished loading all account data.");
+
+            Client.instance.account.LogData();
         }
-        
+
     }
 
 }

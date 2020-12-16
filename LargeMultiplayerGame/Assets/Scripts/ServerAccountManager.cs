@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class ServerAccountManager
 {
-    public static Dictionary<string[], ServerAccount> accounts = new Dictionary<string[], ServerAccount>();
+    
+    public static Dictionary<string, ServerAccount> accounts = new Dictionary<string, ServerAccount>();
     
 
-    public static void AccountLogin(int _id, string[] _credentials, int _token)
+    public static void AccountLogin(int _id, string _username, string _password, int _token)
     {
-        if (accounts.ContainsKey(_credentials))
+        
+        if (accounts.TryGetValue(_username, out ServerAccount _account) && _account.password == _password)
         {
-            if (accounts[_credentials].ValidateSessionToken(_token))
+            if (_account.ValidateSessionToken(_token))
             {
-                ServerSend.LoginSuccessful(_id, accounts[_credentials]);
+                Server.clients[_id].SetNewOwner(_account.username);
+                ServerSend.LoginSuccessful(_id, _account.CreateSessionToken());
             }
             else
             {
@@ -26,27 +29,53 @@ public class ServerAccountManager
         }
     }
 
-    public static void AccountLogout()
+    public static void AccountLogout(int _id)
     {
-        
+        accounts[Server.clients[_id].owner].RemoveSessionToken();
     }
+
+
+
+    public static void RequestAccountData(int _id, int _token)
+    {
+        if (Server.clients.TryGetValue(_id, out Client _client))
+        {
+            if (accounts.ContainsKey(_client.owner))
+            {
+                if (accounts[_client.owner].ValidateSessionToken(_token))
+                {
+                    ServerSend.SendAccountData(_id, accounts[_client.owner]);
+                }
+            }
+        }
+    }
+    
 }
 
-public struct ServerAccount
+
+
+
+
+
+
+
+public class ServerAccount
 {
     public ServerAccount(string _username, string _password)
     {
         username = _username;
         password = _password;
-        sessionToken = -1;
-        characters = new List<CharacterData>();
+        characters.Add(new CharacterData());
+        characters.Add(new CharacterData());
+        characters.Add(new CharacterData());
     }
 
     public string username;
     public string password;
-    private int sessionToken;
+    public int gold = 0;
+    private int sessionToken = -1;
     
-    public List<CharacterData> characters;
+    public List<CharacterData> characters = new List<CharacterData>();
 
 
     public bool ValidateSessionToken(int _token)
@@ -56,7 +85,7 @@ public struct ServerAccount
 
     public int CreateSessionToken()
     {
-        sessionToken = (int)(Time.realtimeSinceStartup * Time.deltaTime);
+        sessionToken = (int)(Random.insideUnitSphere * Random.Range(1000,9999)).magnitude;
         return sessionToken;
     }
 

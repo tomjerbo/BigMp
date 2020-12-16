@@ -14,6 +14,17 @@ namespace ServerCode
         public int maxPlayers = 16;
         public int serverPort = 26950;
 
+        public string debugName;
+        public string debugPass;
+
+        [ContextMenu("Make debug account")]
+        public void MakeDebugAccount()
+        {
+            ServerAccountManager.accounts.Add(debugName, new ServerAccount(debugName, debugPass));
+        }
+        
+        
+        
         private void Awake()
         {
             if (instance == null)

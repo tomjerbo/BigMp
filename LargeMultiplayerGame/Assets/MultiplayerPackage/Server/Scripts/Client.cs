@@ -13,7 +13,7 @@ namespace ServerCode
         public static int dataBufferSize = 1024;
 
         public int id;
-        public Player player;
+        public string owner;
         public TCP tcp;
         public UDP udp;
 
@@ -23,6 +23,9 @@ namespace ServerCode
             tcp = new TCP(id);
             udp = new UDP(id);
         }
+
+        public void SetNewOwner(string _owner) { owner = _owner; }
+        public void RemoveOwner() { owner = ""; }
 
         public class TCP
         {
@@ -218,18 +221,17 @@ namespace ServerCode
         {
             Debug.Log($"{tcp.socket.Client.RemoteEndPoint} has disconnected.");
             
-            ThreadManager.ExecuteOnMainThread(() =>
-            {
-                UnityEngine.Object.Destroy(player.gameObject);
-                player = null;
-            });
+            // ThreadManager.ExecuteOnMainThread(() =>
+            // {
+            //     UnityEngine.Object.Destroy(player.gameObject);
+            //     player = null;
+            // });
             
             
             tcp.Disconnect();
             udp.Disconnect();
 
             ServerSend.PlayerDisconnected(id);
-
         }
     }
 

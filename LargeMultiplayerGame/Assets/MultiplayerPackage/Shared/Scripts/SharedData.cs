@@ -8,12 +8,14 @@
         LoginFailed,
         PlayerDisconnected,
         StopConnection,
+        SendAccountData,
     }
 
     /// <summary>Sent from client -> server.</summary>
     public enum ClientPackets
     {
         welcomeReceived = 1,
+        RequestAccountDataFromServer,
     }
     
 }

@@ -15,11 +15,15 @@ namespace ServerCode
 
             if (_fromClient != _clientIdCheck) ServerSend.StopConnection(_clientIdCheck);
             
-            ServerAccountManager.AccountLogin(_fromClient, new []{_username,_password}, _token);
-
+            ServerAccountManager.AccountLogin(_fromClient, _username, _password, _token);
         }
 
-        
+        public static void RequestAccountDataFromServer(int _fromClient, Packet _packet)
+        {
+            int _sessionToken = _packet.ReadInt();
+
+            ServerAccountManager.RequestAccountData(_fromClient, _sessionToken);
+        }
         
     }
 }

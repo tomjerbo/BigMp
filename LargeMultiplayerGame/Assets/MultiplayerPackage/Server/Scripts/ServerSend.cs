@@ -98,26 +98,55 @@ namespace ServerCode
             }
         }
         
-        public static void LoginSuccessful(int _toClient, ServerAccount _accountData)
+        public static void LoginSuccessful(int _toClient, int _sessionToken)
         {
             using (Packet _packet = new Packet((int) ServerPackets.LoginSuccessful))
             {
-                _packet.Write(_accountData.CreateSessionToken());
-                
+                _packet.Write(_sessionToken);
                 
                 SendTCPData(_toClient, _packet);
             }
         }
 
+        
+        
         public static void LoginFailed(int _toClient, string _message)
         {
             using (Packet _packet = new Packet((int) ServerPackets.LoginFailed))
             {
                 _packet.Write(_message);
+                
                 SendTCPData(_toClient, _packet);
             }
         }
 
+
+        
+        
+        
+        public static void SendAccountData(int _toClient, ServerAccount _accountData)
+        {
+            using (Packet _packet = new Packet((int) ServerPackets.SendAccountData))
+            {
+                _packet.Write(_accountData.gold);
+                _packet.Write(_accountData.characters.Count);
+                foreach (var _character in _accountData.characters)
+                {
+                    _packet.Write(_character.characterName);
+                    _packet.Write(_character.characterLevel);
+                    _packet.Write(_character.characterExperience);
+                    _packet.Write(_character.characterPosition);
+                    _packet.Write((int)_character.worldLocation);
+                    _packet.Write(_character.equipments.Count);
+                    foreach (var _equipment in _character.equipments)
+                    {
+                        _packet.Write((int)_equipment.itemItemSlot);
+                    }
+                }
+                
+                SendTCPData(_toClient, _packet);
+            }
+        }
 
         public static void PlayerDisconnected(int _playerId)
         {

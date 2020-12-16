@@ -17,6 +17,8 @@ namespace ClientCode
         public int myId = 0;
         public TCP tcp;
         public UDP udp;
+        public int sessionToken = -1;
+        public AccountData account;
 
         private bool isConnected = false;
         private delegate void PacketHandler(Packet _packet);
@@ -299,6 +301,9 @@ namespace ClientCode
             packetHandlers = new Dictionary<int, PacketHandler>()
             {
                 { (int)ServerPackets.welcome, ClientHandle.Welcome },
+                { (int)ServerPackets.LoginSuccessful, ClientHandle.LoginSuccessful },
+                { (int)ServerPackets.LoginFailed, ClientHandle.LoginFailed },
+                { (int)ServerPackets.SendAccountData, ClientHandle.SendAccountData },
             };
             Debug.Log("Initialized packets.");
         }
