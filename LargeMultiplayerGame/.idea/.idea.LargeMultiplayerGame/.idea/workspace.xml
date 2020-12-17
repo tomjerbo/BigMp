@@ -109,27 +109,26 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ServerAccountManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/Server.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/ServerSend.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/LoadingScreen.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/ThreadManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/Equipment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/Server.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/NetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/ClientSend.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/Client.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/ClientHandle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Shared/Scripts/SharedData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/AccountData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/ThreadManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/Client.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3DC54541-A257-4AC7-826A-004A212A4332/6a/ecd43be7/Debug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ServerAccountManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/ThreadManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/ServerHandle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/Client.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LoadingScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Shared/Scripts/SharedData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/ThreadManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CharacterData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/NetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/ClientHandle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/Equipment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/ClientSend.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AccountData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/Client.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -141,17 +140,17 @@
         <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/ClientSend.cs" />
         <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/Server.cs" />
         <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Shared/Scripts/SharedData.cs" />
-        <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/Client.cs" />
         <option value="$PROJECT_DIR$/Assets/CharacterData.cs" />
         <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/ServerSend.cs" />
         <option value="$PROJECT_DIR$/Assets/AccountData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Items/Equipment.cs" />
         <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/ServerHandle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ServerAccountManager.cs" />
         <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/NetworkManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/Client.cs" />
         <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/ClientHandle.cs" />
+        <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Server/Scripts/Client.cs" />
+        <option value="$PROJECT_DIR$/Assets/MultiplayerPackage/Client/Scripts/Client.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ServerAccountManager.cs" />
       </list>
     </option>
   </component>
@@ -173,15 +172,22 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -195,8 +201,12 @@
       <workItem from="1608026782279" duration="5665000" />
       <workItem from="1608109600453" duration="7685000" />
       <workItem from="1608127140149" duration="7917000" />
+      <workItem from="1608200936538" duration="3137000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
@@ -220,10 +230,11 @@
       <screen x="-1080" y="-584" width="1080" height="1880" />
     </state>
     <state x="-1039" y="1" key="SettingsEditor/-1080.-584.1080.1880/0.0.1920.1040/1920.-4.1920.1040@-1080.-584.1080.1880" timestamp="1608033537813" />
-    <state x="481" y="323" width="1593" height="505" key="search.everywhere.popup" timestamp="1608133530014">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="361" y="240" width="1195" height="376" key="search.everywhere.popup" timestamp="1608201364691">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-877" y="-149" width="672" height="678" key="search.everywhere.popup/-1080.-584.1080.1880/0.0.1920.1040/1920.-4.1920.1040@-1080.-584.1080.1880" timestamp="1608033470887" />
+    <state x="361" y="240" width="1195" height="376" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1608201364691" />
     <state x="481" y="323" width="1593" height="505" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1608133530014" />
   </component>
 </project>

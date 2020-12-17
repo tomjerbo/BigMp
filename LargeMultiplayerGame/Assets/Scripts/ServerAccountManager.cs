@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class ServerAccountManager
 {
-    
-    public static Dictionary<string, ServerAccount> accounts = new Dictionary<string, ServerAccount>();
-    
 
+    public static Dictionary<string, ServerAccount> accounts= new Dictionary<string, ServerAccount>();
+    
+    
     public static void AccountLogin(int _id, string _username, string _password, int _token)
     {
-        
-        if (accounts.TryGetValue(_username, out ServerAccount _account) && _account.password == _password)
+        if (accounts.ContainsKey(_username) && accounts[_username].password == _password)
         {
-            if (_account.ValidateSessionToken(_token))
+            if (accounts[_username].ValidateSessionToken(_token))
             {
-                Server.clients[_id].SetNewOwner(_account.username);
-                ServerSend.LoginSuccessful(_id, _account.CreateSessionToken());
+                Server.clients[_id].SetNewOwner(accounts[_username].username);
+                ServerSend.LoginSuccessful(_id, accounts[_username].CreateSessionToken());
             }
             else
             {
@@ -49,6 +48,18 @@ public class ServerAccountManager
             }
         }
     }
+
+
+    public static void CreateNewAccount()
+    {
+        
+    }
+
+
+    public static void LoadServerAccounts()
+    {
+        
+    }
     
 }
 
@@ -66,8 +77,6 @@ public class ServerAccount
         username = _username;
         password = _password;
         characters.Add(new CharacterData());
-        characters.Add(new CharacterData());
-        characters.Add(new CharacterData());
     }
 
     public string username;
@@ -80,6 +89,7 @@ public class ServerAccount
 
     public bool ValidateSessionToken(int _token)
     {
+        Debug.Log($"Checking token {_token} -> {sessionToken}");
         return sessionToken == _token;
     }
 
@@ -91,6 +101,7 @@ public class ServerAccount
 
     public void RemoveSessionToken()
     {
+        Debug.Log("Token reset");
         sessionToken = -1;
     }
 

@@ -227,6 +227,7 @@ namespace ServerCode
             //     player = null;
             // });
             
+            ServerAccountManager.AccountLogout(id);
             
             tcp.Disconnect();
             udp.Disconnect();

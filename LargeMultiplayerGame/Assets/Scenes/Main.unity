@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5889a060749be458efd64da15cf264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ip: 192.168.0.108
+  ip: 192.168.1.207
   port: 26950
   myId: 0
   sessionToken: -1
@@ -2444,12 +2444,12 @@ PrefabInstance:
     - target: {fileID: 3684515829472715658, guid: b5fbf55374bf65c4c8cff80f8e06fcea,
         type: 3}
       propertyPath: debugName
-      value: tom
+      value: a
       objectReference: {fileID: 0}
     - target: {fileID: 3684515829472715658, guid: b5fbf55374bf65c4c8cff80f8e06fcea,
         type: 3}
       propertyPath: debugPass
-      value: bobo
+      value: b
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5fbf55374bf65c4c8cff80f8e06fcea, type: 3}

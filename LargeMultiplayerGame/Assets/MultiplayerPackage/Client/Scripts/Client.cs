@@ -317,6 +317,7 @@ namespace ClientCode
                 tcp.socket.Close();
                 udp.socket.Close();
 
+                sessionToken = -1;
                 Debug.Log("Disconnected from server.");
             }
         }
