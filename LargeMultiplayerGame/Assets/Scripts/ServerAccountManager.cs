@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using ServerCode;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ServerAccountManager
 {
@@ -56,9 +60,50 @@ public class ServerAccountManager
     }
 
 
+
+    public static string savePath = @"C:\Users\tomje\Desktop\ReadThisFile.txt";
     public static void LoadServerAccounts()
     {
+        StreamReader stream = new StreamReader(savePath);
+
+        while(true)
+        {
+            string a = stream.ReadLine();
+            if (a == null) break;
+            Debug.Log(a);
+        }
         
+
+        stream.Close();
+    }
+
+    public static void SaveServerAccounts()
+    {
+        StreamWriter stream = new StreamWriter(savePath);
+        
+        stream.WriteLine("START");
+        
+        foreach (var _pair in accounts)
+        {
+            stream.Write($"Username[{_pair.Key}]Password[{_pair.Value.password}]Gold[{_pair.Value.gold}]CharacterCount[{_pair.Value.characters.Count}]");
+            foreach (var _character in _pair.Value.characters)
+            {
+                stream.Write($"Name[{_character.characterName}]");
+                stream.Write($"Level[{_character.characterLevel}]");
+                stream.Write($"Exp[{_character.characterExperience}]");
+                stream.Write($"Location[{_character.worldLocation}]");
+                stream.Write($"Pos[{_character.characterPosition}]");
+                stream.Write($"ItemCount[{_character.equipments.Count}]");
+                foreach (var _eq in _character.equipments)
+                {
+                    stream.Write($"Item{_eq.itemItemSlot}");
+                }
+                stream.Write("\n");
+            }
+        }
+        
+        stream.WriteLine("END");
+        stream.Close();
     }
     
 }

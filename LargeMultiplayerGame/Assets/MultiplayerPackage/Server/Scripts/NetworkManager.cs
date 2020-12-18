@@ -22,9 +22,18 @@ namespace ServerCode
         {
             ServerAccountManager.accounts.Add(debugName, new ServerAccount(debugName, debugPass));
         }
-        
-        
-        
+
+        [ContextMenu("Load file")]
+        public void LoadFile()
+        {
+            ServerAccountManager.LoadServerAccounts();
+        }
+
+        [ContextMenu("Save file")]
+        public void SaveFile()
+        {
+            ServerAccountManager.SaveServerAccounts();
+        }
         private void Awake()
         {
             if (instance == null)

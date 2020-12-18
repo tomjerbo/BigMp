@@ -63,8 +63,6 @@ namespace ClientCode
                 charList.Add(_char);
             }
 
-            
-            
             Client.instance.account = new AccountData(charList, _gold);
             
             GameManager.instance.AccountDataReceived();
