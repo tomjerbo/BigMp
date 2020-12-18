@@ -6,9 +6,6 @@
     <e p="C:\Users\tomje\Desktop\BigMp\LargeMultiplayerGame" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="AccountData.cs" t="Include" />
-        <e p="CharacterData.cs" t="Include" />
-        <e p="LoadingScreen.cs" t="Include" />
         <e p="MultiplayerPackage" t="Include">
           <e p="Client" t="Include">
             <e p="Scripts" t="Include">
@@ -40,6 +37,8 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AccountData.cs" t="Include" />
+          <e p="CharacterData.cs" t="Include" />
           <e p="CharacterListing.cs" t="Include" />
           <e p="CharacterMenu.cs" t="Include" />
           <e p="GameEvent.cs" t="Include" />
@@ -47,10 +46,15 @@
             <e p="Equipment.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
           </e>
+          <e p="LoadingScreen.cs" t="Include" />
           <e p="ServerAccountManager.cs" t="Include" />
         </e>
         <e p="Shader" t="Include">
           <e p="Skybox_Gradient.shader" t="Include" />
+        </e>
+        <e p="SpellCasting.cs" t="Include" />
+        <e p="Test" t="Include">
+          <e p="FirstPersonController.cs" t="Include" />
         </e>
       </e>
       <e p="LargeMultiplayerGame.sln" t="IncludeFlat" />
