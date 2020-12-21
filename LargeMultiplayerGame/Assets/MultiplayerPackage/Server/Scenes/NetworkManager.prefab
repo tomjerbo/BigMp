@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPlayers: 20
   serverPort: 26950
+  debugName: a
+  debugPass: b
 --- !u!114 &3684515829472715659
 MonoBehaviour:
   m_ObjectHideFlags: 0
